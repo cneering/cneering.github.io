@@ -1,0 +1,290 @@
+:root {
+    --colorPrimary: red;
+    --colorSecondary: blue;
+    --colorBtn: gray;
+    --colorFont1: #72172e;
+    --colorFont2: white;
+    --colorFont3: rgb(53, 53, 53);
+    --colorBg1: white;
+    --colorBg2: #cbcbcb;
+    
+    --btnBgPrimary: #fff;
+    --btnBgPrimaryHover: #dadada;
+    --btnBgBook: #138847;
+    --btnBgBookHover: #086933;
+
+    --fontTitle: 'roboto', serif;
+    --fontPrimary: 'Roboto', sans-serif;
+    --fontBtnMain: 'Roboto', sans-serif;
+
+
+}
+* {
+    box-sizing: border-box;
+}
+html, body, div, img, a, h1, h2, h3, header, footer {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    text-decoration: none;
+}
+body {
+    font-size: 16px;
+    color: black;
+    font-family: var(--fontPrimary);
+    background: var(--colorBg1);
+}
+h1, h2 {
+    font-family: var(--fontTitle);
+    color: var(--colorFont1);
+    letter-spacing: -1px;
+}
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    padding: .5em 1.5em;
+    color: var(--colorFont1);
+    background: white;
+    z-index: 100;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+}
+.title {
+    font-family: var(--fontTitle);
+    font-size: 2.5em;
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'DM Serif Display', serif;
+}
+.nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin: 0 5px;
+    /* background: rgba(0,0,0,.2); */
+}
+.logo {
+    height: 80px;
+    margin-right: 10px;
+    filter: contrast(2);
+    filter: sepia(1) hue-rotate(72deg) saturate(3.5);
+}
+.style1 .logo, .style2 .logo, .style3 .logo {
+    filter: sepia(1) hue-rotate(310deg) saturate(.9) contrast(2.5);
+}
+.style1 .title, .style2 .title, .style3 .title {
+    position: absolute;
+    color: var(--colorFont1);
+}
+.style1 .title {
+    text-transform: lowercase;
+    font-size: 37px;
+    left: 74px;
+    top: 16px;
+}
+.style2 .title {
+    font-family: 'PT Serif', serif;
+    font-size: 37px;
+    left: 74px;
+    top: 19px;
+}
+.style3 .title {
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    left: 76px;
+    top: 15px;
+}
+.style4 .title {
+    color: #1f1f1f;
+}
+.style4 .logo, .style5 .logo, .style6 .logo {
+    filter: sepia(1) hue-rotate(72deg) saturate(2.5);
+}
+.style4 .bookNow, .style5 .bookNow, .style6 .bookNow {
+    color: var(--colorFont3) !important;
+    background: none;
+    border: solid 2px var(--btnBgBook) !important;
+}
+.style4 .bookNow:hover, .style5 .bookNow:hover, .style6 .bookNow:hover {
+    background: var(--btnBgBook);
+    color: white !important;
+}
+.style5 .title {
+    font-family: 'Righteous';
+    color: #1f1f1f;
+}
+.style6 .title {
+    color: #4d4d4d;
+    top: 1px;
+    position: absolute;
+    left: 77px;
+}
+.subtitle {
+    display: none;
+}
+.style6 .subtitle {
+    position: absolute;
+    display: block;
+    top: 50px;
+    left: 77px;
+    font-family: roboto;
+    font-style: italic;
+    letter-spacing: -1px;
+    font-size: 19px;
+}
+.btn {
+    background: var(--btnBgPrimary);
+    color: var(--colorFont3);
+    padding: .5em 1em;
+    margin-left: 2em;
+    font: 1em var(--fontPrimary);
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    /* box-shadow: 1px 1px 3px rgba(0,0,0,.3); */
+    transition: .2s all ease-in-out;
+}
+.btn:hover {
+    background: var(--btnBgPrimaryHover);
+}
+.bookNow {
+    color: var(--colorFont2);
+    background: var(--btnBgBook);
+}
+.bookNow:hover {
+    background: var(--btnBgBookHover);
+}
+.cta {
+    padding: 40px 35px;
+    font-size: 1.5em;
+    background: none;
+    /* max-height: 200px; */
+    /* height: 120px; */
+    /* margin-top: 65px; */
+    border: solid 2px green;
+    /* color: black; */
+    /* align-self: center; */
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    width: 10em;
+    /* text-align: center; */
+    color: black;
+}
+.cta:hover {
+    background: var(--btnBgBook);
+    color: white !important;
+}
+.heroContainer {
+    height: 500px;
+    background: url(img/cannabis-and-wine-pairing-3-1280x800.jpg);
+    background-attachment: fixed;
+    object-fit: cover;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+}
+.bgStripCont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.bgStrip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bgStrip1 {
+    background: url(img/leaf.png) no-repeat;
+    background-attachment: fixed;
+    background-size: 56%;
+    background-position: -11% 50%;
+    opacity: .1;
+}
+.bgStrip2 {
+    background: url(img/wineSplash.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: 45%;
+    background-position: 127% 14%;
+    opacity: .06;
+}
+.bgImg01 {
+    position: fixed;
+    top: 75px;
+    left: -19px;
+    opacity: .12;
+    z-index: -1;
+    height: 700px;
+}
+.bgImg02 {
+    position: fixed;
+    top: 70px;
+    right: -190px;
+    opacity: .07;
+    z-index: -1;
+    height: 910px;
+}
+img.hero {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card {
+    display: flex;
+    align-self: center;
+    padding: 3em 6em 3em 6em;
+}
+.left {
+    flex-grow: 1;
+}
+.right {
+
+}
+.strip {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0;
+}
+.stripImgCont {
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    /* outline: solid red 1px; */
+    overflow: hidden;
+}
+.stripImg {
+    max-height: 200px;
+    filter: sepia(1);
+    cursor: pointer;
+    transform: scale(1);
+    transition: .15s all ease-in-out;
+}
+.stripImg:hover {
+    filter: none;
+    transform: scale(1.03);
+}
+iframe {
+    padding-top: 20px;
+}
+footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 70px;
+    background: var(--colorBg2);
+}
+.contact {
+    margin: 1.5em;
+}
+.footerNav {
+    display: flex;
+    align-items: center;
+    padding: .5em 1.5em;
+}
