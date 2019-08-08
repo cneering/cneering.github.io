@@ -10,13 +10,14 @@
     
     --btnBgPrimary: #fff;
     --btnBgPrimaryHover: #dadada;
-    --btnBgBook: #138847;
+    /* --btnBgBook: #138847; */
+    --btnBgBook: #922b2b;
     --btnBgBookHover: #086933;
 
     --fontTitle: 'roboto', serif;
     --fontPrimary: 'Roboto', sans-serif;
     --fontBtnMain: 'Roboto', sans-serif;
-
+    --easing: all .4s cubic-bezier(0.65, 0.05, 0.36, 1);
 
 }
 * {
@@ -35,9 +36,9 @@ body {
     background: var(--colorBg1);
 }
 h1, h2 {
-    font-family: var(--fontTitle);
+    font-family: 'DM Serif Display', serif;
     color: var(--colorFont1);
-    letter-spacing: -1px;
+    /* letter-spacing: .5px; */
 }
 h3 {
     margin: 2em 0 -.5em 0;
@@ -45,22 +46,33 @@ h3 {
 .header {
     position: fixed;
     display: flex;
-    align-items: center;
     top: 0;
+    align-items: center;
     width: 100%;
-    height: 90px;
+    height: 110px;
     padding: .5em 1.5em;
     color: var(--colorFont1);
     background: white;
     z-index: 100;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+    transition: var(--easing);
+}
+.header.sticky {
+    height: 70px;
+}
+.compBox {
+    line-height: 1.2;
 }
 .title {
     font-family: var(--fontTitle);
-    font-size: 2.5em;
+    font-size: 2.7em;
     font-family: 'Lobster', cursive;
     /* font-family: 'Merriweather', serif; */
     font-family: 'DM Serif Display', serif;
+    transition: var(--easing);
+}
+.sticky .title {
+    font-size: 2.1em;
 }
 .nav {
     display: flex;
@@ -70,10 +82,14 @@ h3 {
     /* background: rgba(0,0,0,.2); */
 }
 .logo {
-    height: 80px;
+    height: 96px;
     margin-right: 10px;
-    filter: contrast(2);
-    filter: sepia(1) hue-rotate(72deg) saturate(3.5);
+    filter: contrast(1.3);
+    transition: var(--easing);
+    /* filter: sepia(1) hue-rotate(72deg) saturate(3.5); */
+}
+.sticky .logo {
+    height: 60px;
 }
 .style1 .logo, .style2 .logo, .style3 .logo {
     filter: sepia(1) hue-rotate(310deg) saturate(.9) contrast(2.5);
@@ -104,15 +120,15 @@ h3 {
     color: #1f1f1f;
 }
 .style4 .logo, .style5 .logo, .style6 .logo {
-    filter: sepia(1) hue-rotate(72deg) saturate(2.5);
+    /* filter: sepia(1) hue-rotate(72deg) saturate(2.5); */
 }
 .style4 .bookNow, .style5 .bookNow, .style6 .bookNow {
-    color: var(--colorFont3) !important;
-    background: none;
-    border: solid 2px var(--btnBgBook) !important;
+    color: white;
+    background: var(--btnBgBook);
+    border: solid 2px #b77d7d;
 }
 .style4 .bookNow:hover, .style5 .bookNow:hover, .style6 .bookNow:hover {
-    background: var(--btnBgBook);
+    background: #7d1313;
     color: white !important;
 }
 .style5 .title {
@@ -120,33 +136,40 @@ h3 {
     color: #1f1f1f;
 }
 .style6 .title {
-    color: #4d4d4d;
-    top: 1px;
-    position: absolute;
-    left: 77px;
+    color: #313131;
+    /* top: 1px; */
+    /* position: absolute; */
+    /* left: 77px; */
 }
-.subtitle {
+/* .subtitle {
     display: none;
-}
+} */
 .style6 .subtitle {
-    position: absolute;
-    display: block;
-    top: 50px;
-    left: 77px;
+    /* position: absolute; */
+    /* display: block; */
+    /* top: 50px; */
+    /* left: 77px; */
     font-family: roboto;
     font-style: italic;
     letter-spacing: -1px;
-    font-size: 19px;
+    font-size: 23px;
+    transition: var(--easing);
+}
+.sticky .subtitle {
+    font-size: 1em;
+}
+.title, .subtitle {
+    line-height: 1.1;
 }
 .btn {
     background: var(--btnBgPrimary);
     color: var(--colorFont3);
     padding: .5em 1em;
-    margin-left: 2em;
+    margin-left: 1em;
     font: 1em var(--fontPrimary);
     cursor: pointer;
     border-radius: 4px;
-    border: none;
+    border: solid 2px #bdbdbd;
     /* box-shadow: 1px 1px 3px rgba(0,0,0,.3); */
     transition: .2s all ease-in-out;
 }
@@ -154,6 +177,8 @@ h3 {
     background: var(--btnBgPrimaryHover);
 }
 .bookNow {
+    display: flex;
+    align-items: center;
     color: var(--colorFont2);
     background: var(--btnBgBook);
 }
@@ -161,31 +186,48 @@ h3 {
     background: var(--btnBgBookHover);
 }
 .cta {
-    padding: 40px 35px;
+    display: flex;
+    justify-content: center;
+    width: 10em;
+    padding: 13px 35px;
+    color: white;
     font-size: 1.5em;
-    background: none;
+    /* background: var(--btnBgBook); */
+    background: var(--btnBgBook);
+    border: solid 2px #b77d7d;
     /* max-height: 200px; */
     /* height: 120px; */
     /* margin-top: 65px; */
-    border: solid 2px green;
     /* color: black; */
     /* align-self: center; */
-    display: flex;
     /* align-content: center; */
-    justify-content: center;
-    width: 10em;
     /* text-align: center; */
-    color: black;
 }
 .cta:hover {
-    background: var(--btnBgBook);
+    background: #7d1313;
     color: white !important;
 }
+.iconLarge, .iconSmall {
+    padding: 0px 3% 0 0;
+}
+.iconSmall {
+    font-size: 1.2em;
+}
+/* .iconLarge {
+    padding: 2px 5px 0 0;
+} */
 .heroContainer {
-    height: 500px;
+    height: 600px;
+    margin-top: 100px;
     background: url(img/cannabis-and-wine-pairing-3-1280x800.jpg);
     background-attachment: fixed;
     object-fit: cover;
+}
+.line {
+    width: calc(100% - 12em);
+    height: 1px;
+    margin: 6em 6em 0em 6em;
+    background: black;
 }
 .main {
     display: flex;
@@ -241,13 +283,13 @@ img.hero {
 .card {
     display: flex;
     align-self: center;
-    padding: 3em 6em 3em 6em;
+    padding: 1em 6em 3em 6em;
 }
 .left {
     flex-grow: 1;
 }
 .right {
-
+    padding-top: 4.4em;
 }
 .strip {
     position: relative;
@@ -280,12 +322,20 @@ iframe {
 footer {
     display: flex;
     justify-content: flex-end;
-    height: 70px;
+    align-items: center;
+    /* height: 70px; */
     background: var(--colorBg2);
 }
-.contact {
-    margin: 1.5em;
+.contactInfo {
+    margin: 1.5em 6em;
+    flex-grow: 1;
 }
+.iconPhone {
+    font-size: 1.2em;
+}
+/* .contact {
+    margin: 1.5em;
+} */
 .footerNav {
     display: flex;
     align-items: center;
