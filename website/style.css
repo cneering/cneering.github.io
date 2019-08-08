@@ -125,7 +125,7 @@ h3 {
 .style4 .bookNow, .style5 .bookNow, .style6 .bookNow {
     color: white;
     background: var(--btnBgBook);
-    border: solid 2px #b77d7d;
+    /* border: solid 2px #b77d7d; */
 }
 .style4 .bookNow:hover, .style5 .bookNow:hover, .style6 .bookNow:hover {
     background: #7d1313;
@@ -168,10 +168,10 @@ h3 {
     margin-left: 1em;
     font: 1em var(--fontPrimary);
     cursor: pointer;
-    border-radius: 4px;
+    /* border-radius: 7px; */
     border: solid 2px #bdbdbd;
     /* box-shadow: 1px 1px 3px rgba(0,0,0,.3); */
-    transition: .2s all ease-in-out;
+    transition: .15s all ease-in-out;
 }
 .btn:hover {
     background: var(--btnBgPrimaryHover);
@@ -181,6 +181,7 @@ h3 {
     align-items: center;
     color: var(--colorFont2);
     background: var(--btnBgBook);
+    border: solid 2px #922b2b;
 }
 .bookNow:hover {
     background: var(--btnBgBookHover);
@@ -194,7 +195,6 @@ h3 {
     font-size: 1.5em;
     /* background: var(--btnBgBook); */
     background: var(--btnBgBook);
-    border: solid 2px #b77d7d;
     /* max-height: 200px; */
     /* height: 120px; */
     /* margin-top: 65px; */
@@ -226,7 +226,7 @@ h3 {
 .line {
     width: calc(100% - 12em);
     height: 1px;
-    margin: 6em 6em 0em 6em;
+    margin: 4em 6em 0em 6em;
     background: black;
 }
 .main {
