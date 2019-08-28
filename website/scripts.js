@@ -20,7 +20,7 @@ var checkHeader = _.throttle(() => {
     let scrollPosition = Math.round(window.scrollY);
 
     // If we've scrolled 100px, add "sticky" class to the header
-    if (scrollPosition > 200){
+    if (scrollPosition > 50){
         header.classList.add('sticky');
     }
     // If not, remove "sticky" class from header
