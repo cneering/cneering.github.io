@@ -8,7 +8,7 @@
     --colorBg1: white;
     --colorBg2: #cbcbcb;
     
-    --btnBgPrimary: #fff;
+    --btnBgPrimary: #3e3e3e;
     --btnBgPrimaryHover: #dadada;
     /* --btnBgBook: #138847; */
     --btnBgBook: #922b2b;
@@ -67,8 +67,16 @@ h3 {
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
     transition: var(--easing);
 }
+
 .header.sticky {
     height: 70px;
+}
+.branding {
+    display: flex;
+    flex-grow: 1;
+    /* width: 100%; */
+    align-items: center;
+    padding-left: .9em;
 }
 .compBox {
     line-height: 1.2;
@@ -177,13 +185,13 @@ h3 {
 }
 .btn {
     background: var(--btnBgPrimary);
-    color: var(--colorFont3);
+    color: var(--colorFont2);
     padding: .5em 1em;
     margin-left: 1em;
     font: 1em var(--fontPrimary);
     cursor: pointer;
     /* border-radius: 7px; */
-    border: solid 2px #bdbdbd;
+    /* border: solid 2px #bdbdbd; */
     /* box-shadow: 1px 1px 3px rgba(0,0,0,.3); */
     transition: .15s all ease-in-out;
 }
@@ -222,6 +230,10 @@ h3 {
     background: #7d1313;
     color: white !important;
 }
+.narrowOnly {
+    display: none;
+    margin-left: 6em;
+}
 .iconLarge, .iconSmall {
     padding: 0px 3% 0 0;
     /* word-break: keep-all; */
@@ -233,11 +245,21 @@ h3 {
     padding: 2px 5px 0 0;
 } */
 .heroContainer {
-    height: 600px;
+    /* height: 600px; */
+    /* height: 35em;
     margin-top: 100px;
     background: url(img/cannabis-and-wine-pairing-3-1280x800.jpg);
     background-attachment: fixed;
+    object-fit: cover; */
+
+
+    height: 35em;
+    margin-top: 70px;
+    background: url(img/cannabis-and-wine-pairing-3-1280x800.jpg) no-repeat center center fixed;
     object-fit: cover;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: 70px;
 }
 .photoBanner {
     /* height: 354px; */
@@ -379,5 +401,49 @@ footer {
 @media only screen and (max-width: 900px) {
     body {font-size: 12px;}
     .logo {height: 76px;}
-    .heroContainer {background-size: 100%;}
+    .noMarginP {font-size: 1.3em;}
+    .right {font-size: .8em;}
 }
+@media only screen and (max-width: 770px) {
+    .header {padding-left: 1em;}
+    .title {font-size: 2.3em;}
+    .right .cta {display: none;}
+    .narrowOnly {display: block;}
+}
+@media only screen and (max-width: 670px) {
+    .header {
+        flex-direction: column;
+        height: 114px;
+        padding: .5em 0em 0em 0em;
+    }
+    .header.sticky {
+        height: 98px;
+    }
+    .branding {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+    .nav {
+        margin: 0 0px;
+        width: 100%;
+    }
+    .nav .btn {
+        flex-grow: 1;
+        border-right: solid 1px white;
+    }
+    .nav .btn:last-child {
+        border-right: solid 0px white;
+    }
+    .btn {
+        margin-left: 0em;
+        /* border: solid 0px #bdbdbd; */
+    }
+    .heroContainer {
+        height: 40vh;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .title {font-size: 2.4em;}
+}
+
